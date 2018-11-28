@@ -1,1 +1,15 @@
-<h1>Please enter the information for your trip: </h1>
+@using PackerTracker.Models
+
+<h1>Planned Trips</h1>
+<ul>
+
+  @foreach (Catalog item in Model)
+  {
+    <li>Location:@item.GetLocation()</li>
+    <li>Month:@item.GetMonth()</li>
+    <li>Budget:$@item.GetBudget()</li>
+    <li>Description:@item.GetDescription()</li>
+  }
+
+</ul>
+<a href="/trips/new">Add a new trip.</a>
