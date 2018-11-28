@@ -28,6 +28,20 @@ namespace PackerTracker.Controllers
         return RedirectToAction("Index");
     }
     
+    [HttpPost("/trips/delete")]
+    public ActionResult DeleteAll()
+    {
+      Catalog.ClearAll();
+      return RedirectToAction("Index");
+    }
+
+
+    [HttpGet("/trips/{id}")]
+    public ActionResult Show(int id)
+    {
+      Catalog item = Catalog.Find(id);
+      return View(item);
+    }
 
   }  
 }

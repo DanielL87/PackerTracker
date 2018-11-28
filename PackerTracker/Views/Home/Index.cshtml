@@ -5,11 +5,12 @@
 
   @foreach (Catalog item in Model)
   {
-    <li>Location:@item.GetLocation()</li>
-    <li>Month:@item.GetMonth()</li>
-    <li>Budget:$@item.GetBudget()</li>
-    <li>Description:@item.GetDescription()</li>
+    <li><a href='/trips/@item.GetId()'>@item.GetLocation()</a></li>
   }
 
 </ul>
 <a href="/trips/new">Add a new trip.</a>
+
+<form action="/trips/delete" method="post">
+  <button type="submit" name="button">Clear All Items</button>
+</form>

@@ -24,10 +24,7 @@ namespace PackerTracker.Models
     _id = _instances.Count();
 
     }
-    public static List<Catalog> GetAll()
-    {
-      return _instances;
-    }
+ 
 
 // Setters
     public void SetLocation(string newLocation)
@@ -79,6 +76,20 @@ namespace PackerTracker.Models
       return _id;
     }
     
+       public static List<Catalog> GetAll()
+    {
+      return _instances;
+    }
+
+       public static void ClearAll()
+    {
+      _instances.Clear();
+    }
+
+      public static Catalog Find(int searchId)
+    {
+      return _instances[searchId-1];
+    }
 
     }
 }
